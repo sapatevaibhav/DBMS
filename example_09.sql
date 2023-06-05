@@ -7,11 +7,10 @@ CREATE TABLE School (
     age INT,
     grade FLOAT
 );
-
-INSERT INTO School VALUES (82, 'Prarthana', 14, 85.5);
-INSERT INTO School VALUES (89, 'Darshana', 10, 92.8);
-INSERT INTO School VALUES (79, 'Bhavana', 8, 78.2);
-INSERT INTO School VALUES (87, 'Shambhoo', 6, 91.7);
+INSERT INTO School VALUES (82, 'Prarthana', 14, 85.543);
+INSERT INTO School VALUES (89, 'Darshana', 10, 92.8233);
+INSERT INTO School VALUES (79, 'Bhavana', 8, 78.2324);
+INSERT INTO School VALUES (87, 'Shambhoo', 6, 91.733);
 
 -- Arithmetic Operations
 
@@ -25,12 +24,14 @@ SELECT student_id, grade / 10 AS grade_percentage FROM School;
 
 -- Built-in Functions
 
-SELECT COUNT(*) AS total_students FROM School;
+SELECT COUNT(*) FROM School;
 
-SELECT AVG(grade) AS average_grade FROM School;
+SELECT AVG(grade) FROM School;
 
-SELECT MIN(age) AS min_age FROM School;
+SELECT MIN(age)  FROM School;
 
-SELECT MAX(grade) AS max_grade FROM School;
+SELECT MAX(grade)  FROM School;
 
-SELECT student_id, ROUND(grade, 1) AS rounded_grade FROM School;
+SELECT student_id, ROUND(grade, 2) FROM School;
+
+select * from School;

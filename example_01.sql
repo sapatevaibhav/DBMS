@@ -8,7 +8,6 @@
 create database hospital;
 use hospital;
 
--- Create Patients Entity
 CREATE TABLE Patients (
     p_id INT PRIMARY KEY,
     p_name VARCHAR(20),
@@ -18,7 +17,6 @@ CREATE TABLE Patients (
     address VARCHAR(30)
 );
 
--- Create Doctors Entity
 CREATE TABLE Doctors (
     d_id INT PRIMARY KEY,
     d_name VARCHAR(100),
@@ -27,7 +25,6 @@ CREATE TABLE Doctors (
     address VARCHAR(30)
 );
 
--- Create Appointments Entity
 CREATE TABLE Appointments (
     ap_id INT PRIMARY KEY,
     p_id INT,
@@ -38,26 +35,16 @@ CREATE TABLE Appointments (
     FOREIGN KEY (d_id) REFERENCES Doctors(d_id)
 );
 
--- alter add new column
-ALTER TABLE Patients
-ADD email VARCHAR(30);
+ALTER TABLE Patients ADD email VARCHAR(30);
 
--- Alter rename table
-ALTER TABLE Appointments
-    RENAME TO ScheduledAppointments;
+ALTER TABLE Appointments RENAME TO ScheduledAppointments;
 
--- Modify the data type
-ALTER TABLE Patients
-MODIFY phone VARCHAR(15);
+ALTER TABLE Patients MODIFY phone VARCHAR(15);
 
--- Alter Rename column
-ALTER TABLE Patients CHANGE COLUMN p_name patient_name VARCHAR(50);
+ALTER TABLE Patients RENAME COLUMN patient_name to p_name ;
 
--- Truncate
 TRUNCATE TABLE ScheduledAppointments;
 
--- Description
 DESC Patients;
 
--- Drop
 drop table ScheduledAppointments;

@@ -24,22 +24,19 @@ INSERT INTO Orders VALUES (3, 3, '2023-05-25');
 INSERT INTO Orders VALUES (4, 2, '2023-05-30');
 INSERT INTO Orders VALUES (5, 4, '2023-06-01');
 
--- join
-SELECT Customers.customer_name, Orders.order_id, Orders.order_date
-FROM Customers
-INNER JOIN Orders ON Customers.customer_id = Orders.customer_id;
-
--- subquery
 SELECT customer_name
 FROM Customers
 WHERE customer_id IN (SELECT customer_id FROM Orders WHERE order_date > '2023-01-01');
 
--- aggregation
-SELECT customer_id, COUNT(order_id) AS order_count
-FROM Orders
-GROUP BY customer_id;
+SELECT customer_name
+FROM Customers
+WHERE customer_id NOT IN (SELECT customer_id FROM Orders WHERE order_date > '2023-01-01');
 
---union 
-SELECT customer_name FROM Customers
-UNION
-SELECT order_id FROM Orders;
+SELECT customer_name
+FROM Customers
+WHERE customer_id LIKE (SELECT customer_id FROM Orders WHERE order_date = '2023-06-01');
+
+
+SELECT customer_name FROM Customers UNION SELECT order_id FROM Orders;
+SELECT customer_name FROM Customers INTERSECT SELECT order_id FROM Orders;
+SELECT customer_name FROM Customers UNION ALL SELECT order_id FROM Orders;

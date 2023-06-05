@@ -18,11 +18,11 @@ SELECT CURDATE() AS current_date;
 
 SELECT NOW() AS current_datetime;
 
-SELECT book_title, YEAR(published) AS publish_year FROM Library;
+SELECT book_title, YEAR(published)  FROM Library;
 
 SELECT book_title, MONTHNAME(published) AS publish_month FROM Library;
 
-SELECT book_title, DAY(published) AS publish_day FROM Library;
+SELECT book_title, DAY(published),DAYNAME(published) AS publish_day FROM Library;
 
 SELECT book_title, HOUR(borrowed) AS borrowed_hour FROM Library;
 

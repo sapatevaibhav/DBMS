@@ -1,5 +1,4 @@
--- Perform implementation of Arithmetic operations and built in functions in SQL
--- queries on school database.
+-- Perform implementation of Group functions in SQL queries on employee database.
 
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY,
@@ -15,7 +14,7 @@ INSERT INTO Employee VALUES (4, 'Anjali', 'IT', 5500);
 INSERT INTO Employee VALUES (5, 'Vaishnavi', 'Communication', 5600);
 INSERT INTO Employee VALUES (6, 'Sakshi', 'Finance', 7000);
 
-SELECT department, COUNT(*) AS total_employees
+SELECT department, COUNT(*)
 FROM Employee
 GROUP BY department;
 
@@ -34,9 +33,8 @@ GROUP BY department;
 SELECT department, SUM(salary) AS total_salary
 FROM Employee
 GROUP BY department
-ORDER BY total_salary DESC
-LIMIT 2;
+ORDER BY total_salary ASC
+LIMIT 3;
 
 SELECT SUM(salary) AS total_salary
 FROM Employee;
-

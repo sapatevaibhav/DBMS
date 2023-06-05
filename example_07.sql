@@ -13,7 +13,6 @@ INSERT INTO Employee VALUES (3, 'Om', 'ME', 4500);
 INSERT INTO Employee VALUES (4, 'Dnyaneshwar', 'Eco', 5500);
 INSERT INTO Employee VALUES (5, 'Samadhan', 'AI', 7000);
 
--- Relational operations
 SELECT * FROM Employee WHERE salary = 5000;
 
 SELECT * FROM Employee WHERE dept <> 'IT';
@@ -26,7 +25,6 @@ SELECT * FROM Employee WHERE salary >= 6000;
 
 SELECT * FROM Employee WHERE salary <= 5000;
 
--- Combining conditions with AND and OR
 SELECT * FROM Employee WHERE dept = 'IT' AND salary >= 5000;
 SELECT * FROM Employee WHERE dept = 'CO' OR dept = 'AI';
 
