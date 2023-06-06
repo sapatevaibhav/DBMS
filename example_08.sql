@@ -17,7 +17,7 @@ SELECT * FROM Products WHERE price > 60000 AND quantity > 10;
 
 SELECT * FROM Products WHERE price < 70000 OR quantity < 10;
 
-SELECT * FROM Products WHERE NOT pr
+SELECT * FROM Products WHERE NOT price > 70000;
 
 SELECT * FROM Products WHERE product_name LIKE '%iPhone%';
 SELECT * FROM Products WHERE product_name LIKE '%_Phone%';
